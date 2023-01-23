@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+  404 — Страница не найдена
+{% endblock title %}
+
+{% block content %}
+  <div class="container my-5">
+
+    <h1 style="font-size: 3.5rem">
+      <a class="link-dark text-decoration-none" href="{{ url_for("index") }}">404<br>— Страница не найдена</a>
+    </h1>
+
+  </div>
+{% endblock content %}
