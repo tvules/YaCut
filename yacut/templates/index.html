@@ -31,13 +31,13 @@
               </div>
 
               <div class="col-auto">
-                <button class="btn btn-outline-secondary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#custom_id">
+                <button class="btn btn-outline-secondary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#short_id">
                   <i class="bi bi-sliders"></i>
                 </button>
               </div>
 
               <div class="col-12 order-lg-last">
-                <div class="collapse {% if form.custom_id.errors or form.custom_id.data %}show{% endif %}" id="custom_id">
+                <div class="collapse {% if form.custom_id.errors or form.custom_id.data %}show{% endif %}" id="short_id">
                   <div class="input-group input-group-lg {% if form.custom_id.errors %}has-validation {% endif %}mb-3">
                     <span class="input-group-text text-muted">{{ url_for("index", _external=True) }}</span>
                     {{ form.custom_id(class="form-control" if not form.custom_id.errors else "form-control is-invalid", placeholder=form.custom_id.description, autocomplete="off") }}
