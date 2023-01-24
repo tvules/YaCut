@@ -16,14 +16,42 @@
 - [Flask](https://flask.palletsprojects.com)
 - [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com)
 - [Flask-Migrate](https://flask-migrate.readthedocs.io)
+- [Gunicorn](https://gunicorn.org/)
+- [Nginx](https://nginx.org)
+- [Docker](https://www.docker.com/)
 
 ## Инструкция
 
 **1. Клонируйте репозиторий**
 
 ```shell
-git clone https://github.com/tvules/yacut.git && cd yacut
+git clone https://github.com/tvules/yacut.git
+cd yacut
 ```
+
+### Production (Docker compose):
+
+**2. В корне проекта создайте `.env` файл**
+
+```shell
+FLASK_APP=yacut
+FLASK_DEBUG=0
+DATABASE_URI="postgresql://postgres:postgres@db:5432/postgres"
+SECRET_KEY=<секретный ключ>
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+```
+
+*Секретный ключ можно сгенерировать [тут](https://djecrety.ir/)
+
+**3. Выполните сборку и запуск контейнеров docker**
+
+```shell
+cd infra
+sudo docker compose up --build
+```
+
+### Development:
 
 **2. Установите зависимости проекта**
 
@@ -35,7 +63,7 @@ pip install -r requirements.txt
 
 ```shell
 FLASK_APP=yacut
-FLASK_DEBUG=0
+FLASK_DEBUG=1
 DATABASE_URI=<URI базы данных, по умолчанию "sqlite:///db.sqlite3">
 SECRET_KEY=<секретный ключ>
 ```
