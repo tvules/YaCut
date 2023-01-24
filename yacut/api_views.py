@@ -1,5 +1,6 @@
 import re
 from http import HTTPStatus
+from typing import Tuple
 
 from flask import Response, jsonify, request, url_for
 
@@ -24,7 +25,7 @@ CUSTOM_ID_VALIDATORS = {
 
 @app.route("/api/id/", methods=("POST",))
 @required_fields(("url",))
-def create_short_url() -> tuple[Response, int]:
+def create_short_url() -> Tuple[Response, int]:
     data = request.get_json()
 
     custom_id = data.get("custom_id")
@@ -50,7 +51,7 @@ def create_short_url() -> tuple[Response, int]:
 
 
 @app.route("/api/id/<string:short_id>/")
-def get_short_url(short_id: str) -> tuple[Response, int]:
+def get_short_url(short_id: str) -> Tuple[Response, int]:
     urlmap = URLMap.query.filter_by(short=short_id).first()
     if urlmap is None:
         raise APIRequestError(const.SHORT_ID_NOT_FOUND, HTTPStatus.NOT_FOUND)
