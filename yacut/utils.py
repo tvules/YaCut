@@ -26,7 +26,7 @@ def required_fields(
                 raise APIRequestError(const.EMPTY_REQUEST_BODY)
 
             for field in fields:
-                if field not in data:
+                if field not in data or field is None:
                     raise APIRequestError(message.format(field=field))
 
             return func(*args, **kwargs)
