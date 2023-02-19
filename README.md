@@ -1,81 +1,99 @@
-# YaCut — Сократить ссылку
-
 ![image](./docs/preview.png)
 
-YaCut — это сервис укорачивания ссылок.
+# YaCut — Сократить ссылку
+
+Cервис укорачивания ссылок.
 Его назначение — ассоциировать длинную пользовательскую ссылку с короткой,
 которую предлагает сам пользователь или предоставляет сервис.
 
-## Особенности
+### ✨ Возможности
 
 - Генерация коротких ссылок и связь их с исходными длинными ссылками.
 - Переадресация на исходный адрес при обращении к коротким ссылкам.
 - REST API
 
-## Технологии
+### 🧰 Технологии
 
-- [Python 3.7+](https://www.python.org)
-- [Flask](https://flask.palletsprojects.com)
-- [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com)
-- [Flask-Migrate](https://flask-migrate.readthedocs.io)
-- [Gunicorn](https://gunicorn.org/)
-- [Nginx](https://nginx.org)
-- [Docker](https://www.docker.com/)
+[![Flask][Flask-badge]][Flask-url]
+[![Gunicorn][Gunicorn-badge]][Gunicorn-url]
+[![Postgres][Postgres-badge]][Postgres-url]
+[![Docker][Docker-badge]][Docker-url]
+[![Nginx][Nginx-badge]][Nginx-url]
 
-## Инструкция
+## ⚙ Начало Работы
 
-**1. Клонируйте репозиторий**
+Чтобы запустить локальную копию проекта, следуйте инструкциям ниже.
 
-```shell
-git clone https://github.com/tvules/yacut.git
-cd yacut
-```
+⚠ Для запуска проекта необходимо установить [Docker][Docker-url].
 
-### Production (Docker compose):
+### 🡇 Установка
 
-**2. В корне проекта создайте `.env` файл**
+1. Клонируйте репозиторий
 
-```shell
-FLASK_APP=yacut
-FLASK_DEBUG=0
-DATABASE_URI="postgresql://postgres:postgres@db:5432/postgres"
-SECRET_KEY=<секретный ключ>
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
-```
+    ```shell
+    git clone https://github.com/tvules/yacut.git
+    cd yacut
+    ```
 
-*Секретный ключ можно сгенерировать [тут](https://djecrety.ir/)
+### 🚀 Локальный Запуск
 
-**3. Выполните сборку и запуск контейнеров docker**
+1. **В корне проекта создайте `.env` файл**
 
-```shell
-cd infra
-sudo docker compose up --build
-```
+    ```shell
+    FLASK_APP=yacut
+    FLASK_DEBUG=0
+    DATABASE_URI="postgresql://postgres:postgres@db:5432/postgres"
+    SECRET_KEY=<секретный ключ>
+    POSTGRES_USER=postgres
+    POSTGRES_PASSWORD=postgres
+    ```
 
-### Development:
+    ###### **Секретный ключ можно сгенерировать [тут](https://djecrety.ir/)*
 
-**2. Установите зависимости проекта**
+2. **Выполните сборку и запуск контейнеров docker**
 
-```shell
-pip install -r requirements.txt
-```
+    ```shell
+    cd infra
+    sudo docker compose up --build
+    ```
 
-**3. В корне проекта создайте `.env` файл**
+## 🕹 Использование
 
-```shell
-FLASK_APP=yacut
-FLASK_DEBUG=1
-DATABASE_URI=<URI базы данных, по умолчанию "sqlite:///db.sqlite3">
-SECRET_KEY=<секретный ключ>
-```
+![Usage-example](docs/usage_example.gif)
 
-*Секретный ключ можно сгенерировать [тут](https://djecrety.ir/)
+## 🛠 Development
 
-**4. Запустите dev-сервер**
+1. **Установите зависимости проекта**
 
-```shell
-flask run
-```
+    ```shell
+    pip install -r requirements.txt
+    ```
+
+2. **В корне проекта создайте `.env` файл**
+
+    ```shell
+    FLASK_APP=yacut
+    FLASK_DEBUG=1
+    DATABASE_URI=<URI базы данных, по умолчанию "sqlite:///db.sqlite3">
+    SECRET_KEY=<секретный ключ>
+    ```
+
+3. **Запустите dev-сервер**
+
+    ```shell
+    flask run
+    ```
 
 <h5 align="center">Автор проекта: <a href="https://github.com/tvules">Ilya Petrukhin</a></h5>
+
+<!-- MARKDOWN LINKS & BADGES -->
+[Flask-badge]: https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white
+[Flask-url]: https://flask.palletsprojects.com
+[Gunicorn-badge]: https://img.shields.io/badge/gunicorn-%298729.svg?style=for-the-badge&logo=gunicorn&logoColor=white
+[Gunicorn-url]: https://gunicorn.org/
+[Postgres-badge]: https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white
+[Postgres-url]: https://www.postgresql.org/
+[Docker-badge]: https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white
+[Docker-url]: https://www.docker.com/
+[Nginx-badge]: https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white
+[Nginx-url]: https://nginx.org
