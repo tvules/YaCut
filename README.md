@@ -56,7 +56,7 @@ Cервис укорачивания ссылок.
 
     ```shell
     cd infra
-    sudo docker compose up --build
+    docker compose up --build
     ```
     
     **После запуска, проект будет доступен по адресу http://localhost/**
