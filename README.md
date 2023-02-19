@@ -26,11 +26,12 @@ Cервис укорачивания ссылок.
 
 ### ⚠ Зависимости
 
-- Для запуска проекта, необходим установленный [Docker][Docker-url]
+- [Python 3.7+][Python-url]
+- [Docker][Docker-url]
 
 ### 🡇 Установка
 
-1. Клонируйте репозиторий
+1. **Клонируйте репозиторий**
 
     ```shell
     git clone https://github.com/tvules/YaCut.git
@@ -41,7 +42,7 @@ Cервис укорачивания ссылок.
 
 1. **В корне проекта создайте `.env` файл**
 
-    ```shell
+    ```dotenv
     FLASK_APP=yacut
     FLASK_DEBUG=0
     DATABASE_URI="postgresql://postgres:postgres@db:5432/postgres"
@@ -65,6 +66,11 @@ Cервис укорачивания ссылок.
 
 ![Usage-example](docs/usage_example.gif)
 
+### API (Docs: [OpenAPI](docs/openapi.yml))
+
+- **POST** `/api/id/`
+- **GET** `/api/id/{short_id}/`
+
 ## 🛠 Development
 
 1. **Установите зависимости проекта**
@@ -75,7 +81,7 @@ Cервис укорачивания ссылок.
 
 2. **В корне проекта создайте `.env` файл**
 
-    ```shell
+    ```dotenv
     FLASK_APP=yacut
     FLASK_DEBUG=1
     DATABASE_URI=<URI базы данных, по умолчанию "sqlite:///db.sqlite3">
@@ -91,6 +97,7 @@ Cервис укорачивания ссылок.
 <h5 align="center">Автор проекта: <a href="https://github.com/tvules">Ilya Petrukhin</a></h5>
 
 <!-- MARKDOWN LINKS & BADGES -->
+[Python-url]: https://www.python.org/
 [Flask-badge]: https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white
 [Flask-url]: https://flask.palletsprojects.com
 [Gunicorn-badge]: https://img.shields.io/badge/gunicorn-%298729.svg?style=for-the-badge&logo=gunicorn&logoColor=white
