@@ -33,8 +33,8 @@ Cервис укорачивания ссылок.
 1. Клонируйте репозиторий
 
     ```shell
-    git clone https://github.com/tvules/yacut.git
-    cd yacut
+    git clone https://github.com/tvules/YaCut.git
+    cd YaCut
     ```
 
 ### 🚀 Локальный Запуск
