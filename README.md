@@ -2,7 +2,7 @@
 
 # YaCut — Сократить ссылку
 
-Cервис укорачивания ссылок.
+Сервис укорачивания ссылок.
 Его назначение — ассоциировать длинную пользовательскую ссылку с короткой,
 которую предлагает сам пользователь или предоставляет сервис.
 
@@ -15,6 +15,7 @@ Cервис укорачивания ссылок.
 ### 🧰 Технологии
 
 [![Flask][Flask-badge]][Flask-url]
+[![SQLAlchemy][SQLAlchemy-badge]][SQLAlchemy-url]
 [![Gunicorn][Gunicorn-badge]][Gunicorn-url]
 [![Postgres][Postgres-badge]][Postgres-url]
 [![Docker][Docker-badge]][Docker-url]
@@ -31,7 +32,7 @@ Cервис укорачивания ссылок.
 
 ### 🡇 Установка
 
-1. **Клонируйте репозиторий**
+1. **Клонируй репозиторий**
 
     ```shell
     git clone https://github.com/tvules/YaCut.git
@@ -40,7 +41,7 @@ Cервис укорачивания ссылок.
 
 ### 🚀 Локальный Запуск
 
-1. **В корне проекта создайте `.env` файл**
+1. **В корне проекта создай `.env` файл**
 
     ```dotenv
     FLASK_APP=yacut
@@ -53,7 +54,7 @@ Cервис укорачивания ссылок.
 
     ###### **Секретный ключ можно сгенерировать [тут](https://djecrety.ir/)*
 
-2. **Выполните сборку и запуск контейнеров docker**
+2. **Выполни сборку и запуск контейнеров docker**
 
     ```shell
     cd infra
@@ -73,13 +74,13 @@ Cервис укорачивания ссылок.
 
 ## 🛠 Development
 
-1. **Установите зависимости проекта**
+1. **Установи зависимости проекта**
 
     ```shell
     pip install -r requirements.txt
     ```
 
-2. **В корне проекта создайте `.env` файл**
+2. **В корне проекта создай `.env` файл**
 
     ```dotenv
     FLASK_APP=yacut
@@ -88,7 +89,7 @@ Cервис укорачивания ссылок.
     SECRET_KEY=<секретный ключ>
     ```
 
-3. **Запустите dev-сервер**
+3. **Запусти dev-сервер**
 
     ```shell
     flask run
@@ -96,10 +97,12 @@ Cервис укорачивания ссылок.
 
 <h5 align="center">Автор проекта: <a href="https://github.com/tvules">Ilya Petrukhin</a></h5>
 
-<!-- MARKDOWN LINKS & BADGES -->
+[Python-badge]: https://img.shields.io/badge/python%203.7+-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
 [Python-url]: https://www.python.org/
 [Flask-badge]: https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white
 [Flask-url]: https://flask.palletsprojects.com
+[SQLAlchemy-badge]: https://img.shields.io/badge/sqlalchemy-fbfbfb?style=for-the-badge
+[SQLAlchemy-url]: https://www.sqlalchemy.org/
 [Gunicorn-badge]: https://img.shields.io/badge/gunicorn-%298729.svg?style=for-the-badge&logo=gunicorn&logoColor=white
 [Gunicorn-url]: https://gunicorn.org/
 [Postgres-badge]: https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white
